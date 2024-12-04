@@ -39,7 +39,10 @@ public class StockRepository(ApplicationDbContext context) : IStockRepository
 
     public async Task<List<Stock>> GetAllAsync(QueryObject query)
     {
-        var stocks = _context.Stocks.Include(c => c.Comments).AsQueryable();
+        var stocks = _context.Stocks
+                   .Include(c => c.Comments)
+                   .ThenInclude(x => x.AppUser)
+                   .AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(query.CompanyName))
         {
@@ -65,7 +68,9 @@ public class StockRepository(ApplicationDbContext context) : IStockRepository
     }
 
     public async Task<Stock?> GetByIdAsync(int id)
-    => await _context.Stocks.Include(c => c.Comments).FirstOrDefaultAsync(x => x.Id == id);
+    => await _context.Stocks.Include(c => c.Comments)
+                            .ThenInclude(x => x.AppUser)
+                            .FirstOrDefaultAsync(x => x.Id == id);
 
     public async Task<Stock?> GetBySymbolAsync(string symbol)
     => await _context.Stocks.FirstOrDefaultAsync(x => x.Symbol == symbol);
