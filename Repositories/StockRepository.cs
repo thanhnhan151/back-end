@@ -67,6 +67,9 @@ public class StockRepository(ApplicationDbContext context) : IStockRepository
     public async Task<Stock?> GetByIdAsync(int id)
     => await _context.Stocks.Include(c => c.Comments).FirstOrDefaultAsync(x => x.Id == id);
 
+    public async Task<Stock?> GetBySymbolAsync(string symbol)
+    => await _context.Stocks.FirstOrDefaultAsync(x => x.Symbol == symbol);
+
     public async Task<Stock?> UpdateAsync(int id, UpdateStockRequestDto stockDto)
     {
         var existingStock = await _context.Stocks.FirstOrDefaultAsync(x => x.Id == id);
