@@ -148,3 +148,9 @@ D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Software\.NET\api\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Software\.NET\api\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\Software\.NET\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
